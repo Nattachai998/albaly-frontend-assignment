@@ -6,9 +6,9 @@ export async function GET() {
       {
         id: "totalSales",
         label: "Total Sales",
-        value: 1284500,       // THB
+        value: 1284500,
         unit: "THB",
-        changePct: 12.8,      // +12.8%
+        changePct: 12.8,
         trend: "up",
         icon: "banknotes"
       },
@@ -16,16 +16,16 @@ export async function GET() {
         id: "activeCustomers",
         label: "Active Customers",
         value: 12430,
-        changePct: 4.1,       // +4.1%
+        changePct: 4.1,
         trend: "up",
         icon: "users"
       },
       {
         id: "inventoryStatus",
         label: "Inventory Status",
-        value: 92,            // %
+        value: 92,         
         unit: "%",
-        changePct: -1.2,      // -1.2%
+        changePct: -1.2,  
         trend: "down",
         icon: "archive"
       }
@@ -53,7 +53,7 @@ export async function GET() {
     monthlyPerformance: {
       month: "2025-08",
       revenue: 1284500,
-      changePct: 12.8, // เทียบเดือนก่อน
+      changePct: 12.8,
       series: [
         { month: "2025-01", revenue: 820000 },
         { month: "2025-02", revenue: 845000 },
