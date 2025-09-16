@@ -28,27 +28,27 @@ export default function Sidebar({
         {/* Backdrop (mobile) */}
         <div
             onClick={onClose}
-            className={`fixed inset-0 z-40 bg-black/40 md:hidden transition-opacity ${
+            className={`fixed inset-0 z-40 bg-black/40 lg:hidden transition-opacity ${
             open ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
         />
-        <aside
+        <div
             className={`fixed inset-y-0 left-0 z-50 w-72 transform bg-white text-gray-900
                         dark:bg-neutral-900 dark:text-neutral-100 border-r border-black/10 dark:border-white/10
-                        transition-transform md:translate-x-0 ${
-                        open ? "translate-x-0" : "-translate-x-full"
-                        } md:static`}
+                        transition-transform 
+                        ${open ? "translate-x-0" : "-translate-x-full"}
+                        lg:translate-x-0 lg:static lg:transform-none`}
             aria-label="Sidebar"
         >
             <div className="flex h-full flex-col">
                 <div className="flex h-16 items-center justify-between border-b border-black/10 dark:border-white/10 px-4">
                     <span className="font-semibold tracking-wide">Albaly Dashboard</span>
                     <button
-                        className="p-2 md:hidden rounded hover:bg-black/5 dark:hover:bg-white/10"
+                        className="p-2 lg:hidden rounded hover:bg-black/5 dark:hover:bg-white/10"
                         onClick={onClose}
                         aria-label="Close sidebar"
                     >
-                    <XMarkIcon className="h-6 w-6" />
+                        <XMarkIcon className="h-6 w-6" />
                     </button>
                 </div>
 
@@ -59,7 +59,7 @@ export default function Sidebar({
                             <Link
                                 key={href}
                                 href={href}
-                                onClick={onClose}
+                                onClick={onClose}   
                                 className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors
                                     ${
                                     active
@@ -81,7 +81,7 @@ export default function Sidebar({
                     </button>
                 </div>
             </div>
-        </aside>
+        </div>
     </>
   );
 }

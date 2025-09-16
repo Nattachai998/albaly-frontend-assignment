@@ -1,19 +1,28 @@
+"use client";
+
 import "../styles/globals.css";
-import { ReactNode } from "react";
-import MyApp from ".";
+import { useState } from "react";
+import Sidebar from "../components/ui/Sidebar";
+import Topbar from "../components/ui/Topbar";
 
-export const metadata = {
-  title: "Business Insights",
-  description: "Albaly Frontend Challenge",
-};
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
 
-export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="h-screen bg-gray-50 text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
-        <MyApp>
-          {children}
-        </MyApp>
+        <div className="flex h-screen w-full overflow-hidden">
+          <Sidebar 
+            open={open} 
+            onClose={() => setOpen(false)} 
+          />
+          <div className="flex flex-1 flex-col">
+            <Topbar onMenuClick={() => setOpen(true)} />
+            <main className="flex-1 overflow-y-auto p-4 md:p-6">
+              {children}
+            </main>
+          </div>
+        </div>
       </body>
     </html>
   );
