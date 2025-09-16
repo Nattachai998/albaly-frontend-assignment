@@ -23,8 +23,16 @@ export default function InsightsPage() {
       .then((data: InsightsPayload) => setData(data));
   }, []);
 
-  if (!data)
-    return <div className="text-sm text-rose-600">No insights available.</div>;
+  if (!data) {  
+    return (
+      <div className="flex space-x-1 justify-center items-center">
+        <div className="h-5 w-1 bg-indigo-500 animate-pulse"></div>
+        <div className="h-5 w-1 bg-indigo-500 animate-pulse [animation-delay:200ms]"></div>
+        <div className="h-5 w-1 bg-indigo-500 animate-pulse [animation-delay:400ms]"></div>
+        <div className="h-5 w-1 bg-indigo-500 animate-pulse [animation-delay:600ms]"></div>
+      </div>
+    )
+  }
 
   // max product
   const topMax = Math.max(
@@ -39,13 +47,15 @@ export default function InsightsPage() {
 
   return (
     <section className="mx-auto max-w-7xl">
-      <h1 className="text-2xl font-semibold tracking-tight">Insights</h1>
-      <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-        Top products, drop-off trends, regions, and conversion funnel.
-      </p>
+      <header>
+        <h1 className="text-2xl font-semibold tracking-tight">Insights</h1>
+        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+          Top products, drop-off trends, regions, and conversion funnel.
+        </p>
+      </header>
 
-      <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
-        {/* Top‑Selling Products */}
+      {/* Top‑Selling Products */}
+      <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2"> 
         <div className="rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-neutral-900 p-5">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-2">
@@ -61,11 +71,11 @@ export default function InsightsPage() {
             {data.topSellingProducts.winner} leads this period
           </p>
 
-          <div className="mt-4 grid grid-cols-1 gap-3">
+          <div className="mt-4 grid grid-cols-1 gap-3 ">
             {data.topSellingProducts.products.map((p, idx) => (
               <div
                 key={p.name + idx}
-                className="rounded-md border border-black/10 dark:border-white/10 p-3"
+                className="rounded-md border border-black/10 dark:border-white/10 p-3 transition transform hover:scale-105 active:scale-95"
               >
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-gray-600 dark:text-gray-300">

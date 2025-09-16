@@ -1,4 +1,6 @@
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import { 
+  Bars3Icon 
+} from "@heroicons/react/24/outline";
 
 export default function Topbar({ onMenuClick }: { onMenuClick: () => void }) {
   return (
@@ -11,7 +13,15 @@ export default function Topbar({ onMenuClick }: { onMenuClick: () => void }) {
         </button>
         <div className="font-medium">Albaly Insights</div>
         <div className="ml-auto flex items-center gap-3">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500" />
+            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500">
+              <span>  
+                <img
+                  src="https://api.dicebear.com/7.x/adventurer/svg?seed=panda"
+                  alt="avatar"
+                  className="h-10 w-10 rounded-full ring-2 ring-white dark:ring-neutral-800"
+                />
+              </span>
+            </div>
         </div>
     </header>
   );

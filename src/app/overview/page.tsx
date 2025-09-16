@@ -34,7 +34,14 @@ export default function OverviewPage() {
   }, []);
 
   if (!data) {  
-    return <div className="text-sm text-rose-600">Failed to load overview.</div>;
+    return (
+      <div className="flex space-x-1 justify-center items-center">
+        <div className="h-5 w-1 bg-indigo-500 animate-pulse"></div>
+        <div className="h-5 w-1 bg-indigo-500 animate-pulse [animation-delay:200ms]"></div>
+        <div className="h-5 w-1 bg-indigo-500 animate-pulse [animation-delay:400ms]"></div>
+        <div className="h-5 w-1 bg-indigo-500 animate-pulse [animation-delay:600ms]"></div>
+      </div>
+    )
   }
   
   // KPI Data
@@ -56,7 +63,7 @@ export default function OverviewPage() {
       <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
 
         {/* Total Sales */}
-        <div className="rounded-lg border border-black/10 dark:border-white/10 p-5 bg-white dark:bg-neutral-900">
+        <div className="rounded-lg border border-black/10 dark:border-white/10 p-5 bg-white dark:bg-neutral-900 transition transform hover:scale-105 active:scale-95">
           <div className="flex items-center justify-between">
             <div className="text-sm text-gray-500 dark:text-gray-400">{total.label}</div>
             <BanknotesIcon className="h-5 w-5 text-gray-400" />
@@ -78,7 +85,7 @@ export default function OverviewPage() {
         </div>
 
         {/* Active Customers */}
-        <div className="rounded-lg border border-black/10 dark:border-white/10 p-5 bg-white dark:bg-neutral-900">
+        <div className="rounded-lg border border-black/10 dark:border-white/10 p-5 bg-white dark:bg-neutral-900 transition transform hover:scale-105 active:scale-95">
           <div className="flex items-center justify-between">
             <div className="text-sm text-gray-500 dark:text-gray-400">{active.label}</div>
             <UsersIcon className="h-5 w-5 text-gray-400" />
@@ -98,7 +105,7 @@ export default function OverviewPage() {
         </div>
 
         {/* Inventory Status */}
-        <div className="rounded-lg border border-black/10 dark:border-white/10 p-5 bg-white dark:bg-neutral-900">
+        <div className="rounded-lg border border-black/10 dark:border-white/10 p-5 bg-white dark:bg-neutral-900 transition transform hover:scale-105 active:scale-95">
           <div className="flex items-center justify-between">
             <div className="text-sm text-gray-500 dark:text-gray-400">{stock.label}</div>
             <ArchiveBoxIcon className="h-5 w-5 text-gray-400" />

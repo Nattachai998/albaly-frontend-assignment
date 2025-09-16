@@ -42,5 +42,6 @@ Data is mocked via local API endpoints under `/api/`.
 
 ---
 
-### Clone Repository
+### Clone Repository & Demo
 git clone https://github.com/Nattachai998/albaly-frontend-assignment.git
+Demo : https://albaly-frontend-assignment-udkk.vercel.app/overview
