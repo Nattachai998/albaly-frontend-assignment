@@ -21,7 +21,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-import { OverviewPayload } from "@/lib/OverviewTypes";
+import { OverviewPayload, Activity } from "@/lib/OverviewTypes";
 
 export default function OverviewPage() {
   const [data, setData] = useState<OverviewPayload>();
@@ -124,7 +124,7 @@ export default function OverviewPage() {
       <div className="mt-8">
         <h2 className="text-lg font-semibold">Recent Activity</h2>
         <div className="mt-3 divide-y divide-black/10 dark:divide-white/10 rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-neutral-900">
-          {activities.map((a: any) => {
+          {activities.map((a: Activity) => {
 
             const Icon = a.status === "success" ? CheckCircleIcon : ExclamationTriangleIcon;
             const color = 
