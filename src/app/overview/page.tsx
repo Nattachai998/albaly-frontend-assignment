@@ -21,7 +21,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-import { OverviewPayload } from "@/lib/types";
+import { OverviewPayload } from "@/lib/OverviewTypes";
 
 export default function OverviewPage() {
   const [data, setData] = useState<OverviewPayload>();

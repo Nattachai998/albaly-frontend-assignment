@@ -10,7 +10,7 @@ import {
   FunnelIcon,
 } from "@heroicons/react/24/outline";
 
-import { InsightsPayload } from "@/lib/types";
+import { InsightsPayload } from "@/lib/InsigthsType";
 import Chip from "@/components/chart/Chip";
 import Bar from "@/components/chart/Bar";
 
