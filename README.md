@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Albaly Frontend Developer Coding Challenge
 
-## Getting Started
+A responsive **Business Insights Dashboard** built with **Next.js, TypeScript, and Tailwind CSS**.  
+This project was developed as part of the Albaly Frontend Developer coding assessment.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Description
+The application is a two-page dashboard consisting of **Overview** and **Insights** with a reusable layout.  
+Data is mocked via local API endpoints under `/api/`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Pages
+- **Layout**
+  - Sidebar navigation (Overview, Insights) + Logout button (static)
+  - Top navigation bar with app title and user avatar
+  - Fully responsive (mobile, tablet, desktop)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Overview**
+  - KPI summary cards: Total Sales, Active Customers, Inventory Status
+  - Recent activity feed (3 items: status, description, timestamp)
+  - Monthly performance section (revenue + % change)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Insights**
+  - Top-selling products comparison with bar indicators
+  - Customer drop-off insights (4-week breakdown)
+  - Regional performance (North America, Europe, APAC)
+  - Conversion funnel: Visitors → Product Views → Add to Cart → Purchase
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Assumptions
+- Data is mocked using static JSON via `/api/` routes.  
+- No external backend integration.  
+- KPI and insights values are simulated, not real business data.  
+- Recharts (or similar) is used for simple charting and visual indicators.  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Setup Instructions
+- npm install
+- npm run dev
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Clone Repository
+git clone https://github.com/Nattachai998/albaly-frontend-assignment.git
