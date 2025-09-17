@@ -28,14 +28,6 @@ Data is mocked via local API endpoints under `/api/`.
 
 ---
 
-## Assumptions
-- Data is mocked using static JSON via `/api/` routes.  
-- No external backend integration.  
-- KPI and insights values are simulated, not real business data.  
-- Recharts (or similar) is used for simple charting and visual indicators.  
-
----
-
 ## Setup Instructions
 - npm install
 - npm run dev
